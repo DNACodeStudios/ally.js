@@ -28,7 +28,9 @@
       "input[type=text][tabindex=-1]": "<input type=\"text\" tabindex=\"-1\">",
       "input[type=reset][tabindex=-1]": "<input type=\"reset\" tabindex=\"-1\">",
       "select[tabindex=-1]": "<select tabindex=\"-1\">",
-      "textarea[tabindex=-1]": "<textarea tabindex=\"-1\">"
+      "textarea[tabindex=-1]": "<textarea tabindex=\"-1\">",
+
+      "input[tabindex=1]": "<input type=\"text\" tabindex=\"1\">"
     }
   },
 
@@ -151,7 +153,9 @@
       "img[tabindex=-1] area": "<area> child of <map name=\"#…\"> with <img usemap=\"#…\" src=\"…\" tabindex=\"-1\">",
 
       "map.invalid-image area[href].lower": "<area href=\"…\"> child of <map name=\"#…\"> with <img usemap=\"#…\" src=\"…\"> with invalid image",
-      "map.invalid-image area[href].upper": "<area href=\"…\"> child of <map name=\"#…\"> with <img usemap=\"#…\" src=\"…\"> with invalid image"
+      "map.invalid-image area[href].upper": "<area href=\"…\"> child of <map name=\"#…\"> with <img usemap=\"#…\" src=\"…\"> with invalid image",
+
+      "firefox-bug-1116126": "<input> between <img usemap=\"#map\"> and <img usemap=\"#map\">"
     },
     "redundant": {
       "img[usemap].first": [
@@ -188,26 +192,84 @@
   },
 
   {
+    "label": "Shadow DOM",
+    "idents": {
+      "shadow-host": "::shadow",
+      "shadow-host input[tabindex=-1]": "<input tabindex=\"-1\"> within ::shadow",
+      "shadow-host input[tabindex=0]": "<input tabindex=\"0\"> within ::shadow",
+      "shadow-host input[tabindex=2]": "<input tabindex=\"2\"> within ::shadow",
+      "shadow-host inner-host input[tabindex=-1]": "<input tabindex=\"-1\"> within nested ::shadow",
+      "shadow-host inner-host input[tabindex=0]": "<input tabindex=\"0\"> within nested ::shadow",
+      "shadow-host inner-host input[tabindex=1]": "<input tabindex=\"1\"> within nested ::shadow",
+      "shadow-host[tabindex=-1]": "::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] input[tabindex=-1]": "<input tabindex=\"-1\"> within ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] input[tabindex=0]": "<input tabindex=\"0\"> within ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] input[tabindex=2]": "<input tabindex=\"2\"> within ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=-1]": "<input tabindex=\"-1\"> within nested ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=0]": "<input tabindex=\"0\"> within nested ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=1]": "<input tabindex=\"1\"> within nested ::shadow[tabindex=\"-1\"]",
+      "shadow-host[tabindex=0]": "::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] input[tabindex=-1]": "<input tabindex=\"-1\"> within ::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] input[tabindex=0]": "<input tabindex=\"0\"> within ::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] input[tabindex=2]": "<input tabindex=\"2\"> within ::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=-1]": "<input tabindex=\"-1\"> within nested ::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=0]": "<input tabindex=\"0\"> within nested ::shadow[tabindex=\"0\"]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=1]": "<input tabindex=\"1\"> within nested ::shadow[tabindex=\"0\"]"
+    },
+    "redundant": {
+      "shadow-host input[tabindex=-1]": [
+        "shadow-host inner-host input[tabindex=-1]"
+      ],
+      "shadow-host input[tabindex=0]": [
+        "shadow-host inner-host input[tabindex=0]"
+      ],
+      "shadow-host[tabindex=-1] input[tabindex=-1]": [
+        "shadow-host[tabindex=-1] inner-host input[tabindex=-1]"
+      ],
+      "shadow-host[tabindex=-1] input[tabindex=0]": [
+        "shadow-host[tabindex=-1] inner-host input[tabindex=0]"
+      ],
+      "shadow-host[tabindex=0] input[tabindex=-1]": [
+        "shadow-host[tabindex=0] inner-host input[tabindex=-1]"
+      ],
+      "shadow-host[tabindex=0] input[tabindex=0]": [
+        "shadow-host[tabindex=0] inner-host input[tabindex=0]"
+      ]
+    }
+  },
+
+  {
     "label": "Iframe Element",
     "idents": {
       "iframe": "<iframe src=\"…\"> without focusable content",
       "iframe[tabindex=-1]": "<iframe src=\"…\" tabindex=\"-1\"> without focusable content",
+      "iframe[src=svg]": "<iframe src=\"…\"> with SVG document",
+      "iframe[src=svg][tabindex=-1]": "<iframe src=\"…\" tabindex=\"-1\"> with SVG document",
       "iframe{focusable}": "<iframe src=\"…\"> with focusable content",
       "iframe{focusable}[tabindex=-1]": "<iframe src=\"…\" tabindex=\"-1\"> with focusable content",
+      "iframe -> body": "<body> within <iframe src=\"…\">",
+      "iframe{focusable} -> body": "<body> within <iframe src=\"…\"> with focusable content",
+      "iframe[tabindex=-1] -> body": "<body> within <iframe src=\"…\" tabindex=\"-1\">",
+      "iframe{focusable}[tabindex=-1] -> body": "<body> within <iframe src=\"…\" tabindex=\"-1\">",
       "iframe{focusable} -> input": "<input> within <iframe src=\"…\">",
       "iframe{focusable}[tabindex=-1] -> input": "<input> within <iframe src=\"…\" tabindex=\"-1\">",
-      "iframe -> body": "<body> within <iframe src=\"…\">",
-      "iframe{focusable} -> body": "<body> within <iframe src=\"…\"> with focusable content"
+      "iframe{focusable} -> input[tabindex=1]": "<input tabindex=\"1\"> within <iframe src=\"…\">",
+      "iframe{focusable}[tabindex=-1] -> input[tabindex=1]": "<input tabindex=\"1\"> within <iframe src=\"…\" tabindex=\"-1\">"
     },
     "redundant": {
       "iframe": [
-        "iframe{focusable}"
+        "iframe{focusable}",
+        "iframe[src=svg]"
       ],
       "iframe[tabindex=-1]": [
-        "iframe{focusable}[tabindex=-1]"
+        "iframe{focusable}[tabindex=-1]",
+        "iframe[src=svg][tabindex=-1]"
       ],
       "iframe -> body": [
         "iframe{focusable} -> body"
+      ],
+      "iframe[tabindex=-1] -> body": [
+        "iframe{focusable}[tabindex=-1] -> body"
       ]
     }
   },
@@ -233,10 +295,12 @@
       "object[src=swf]": "<object type=\"application/x-shockwave-flash\" data=\"…\">",
       "object[src=swf][height=0]": "<object type=\"application/x-shockwave-flash\" data=\"…\" height=\"0\">",
       "object[src=swf][tabindex=-1]": "<object type=\"application/x-shockwave-flash\" data=\"…\" tabindex=\"-1\">",
+      "object[src=swf][tabindex=0]": "<object type=\"application/x-shockwave-flash\" data=\"…\" tabindex=\"0\">",
 
       "object[src=svg]": "<object type=\"image/svg+xml\" data=\"…\">",
       "object[src=svg][height=0]": "<object type=\"image/svg+xml\" data=\"…\" height=\"0\">",
       "object[src=svg][tabindex=-1]": "<object type=\"image/svg+xml\" data=\"…\" tabindex=\"-1\">",
+      "object[src=svg][tabindex=0]": "<object type=\"image/svg+xml\" data=\"…\" tabindex=\"0\">",
 
       "object[usemap]": "<object type=\"image/png\" data=\"…\" usemap=\"#map\">"
     },
@@ -269,6 +333,7 @@
       "svg a[xlink|href][tabindex=-1] text": "<text> within <a xlink:href=\"…\" tabindex=\"-1\"> within <svg>",
       "svg a[xlink|href][tabindex=0]": "<a xlink:href=\"…\" tabindex=\"0\"> within <svg>",
       "svg a[xlink|href][tabindex=0] text": "<text> within <a xlink:href=\"…\" tabindex=\"0\"> within <svg>",
+      "svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <svg>",
 
       "svg rect": "<rect>",
       "svg text": "<text>",
@@ -297,20 +362,89 @@
     },
     "alias": {
       "svg": [
-        "svg{viewbox}"
+        "svg{viewbox}",
+        "svg:has(a[tabindex=-1])",
+        "svg:has(a[tabindex=0])"
       ],
       "svg[focusable=false]": [
         "svg{tiny}[focusable=false]"
       ],
       "svg rect[tabindex=0]": [
-        "svg rect[tabindex=0]{viewbox}"
+        "svg rect[tabindex=0]{viewbox}",
+        "svg{tiny} rect[tabindex=0]"
       ],
       "svg rect[tabindex=-1]": [
-        "svg rect[tabindex=-1]{viewbox}"
+        "svg rect[tabindex=-1]{viewbox}",
+        "svg{tiny} rect[tabindex=-1]"
+      ],
+      "svg rect[focusable=true]": [
+        "svg rect[focusable=true]{viewbox}",
+        "svg{tiny} rect[focusable=true]"
       ],
       "svg rect[focusable=false]": [
-        "svg rect[focusable=false]{viewbox}"
+        "svg rect[focusable=false]{viewbox}",
+        "svg{tiny} rect[focusable=false]"
       ]
+    }
+  },
+
+  {
+    "label": "SVG Document in Iframe Element",
+    "idents": {
+      "iframe[src=svg] -> file:svg": "<svg> within <iframe>",
+      "iframe[src=svg] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <iframe>",
+      "iframe[src=svg] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <iframe>",
+      "iframe[src=svg] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <iframe>",
+      "iframe[src=svg] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <iframe>",
+      "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <iframe tabindex=\"-1\">",
+      "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <iframe tabindex=\"-1\">",
+      "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <iframe tabindex=\"-1\">",
+      "iframe[src=svg][tabindex=-1] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <iframe tabindex=\"-1\">"
+    }
+  },
+
+  {
+    "label": "SVG Document in Embed Element",
+    "idents": {
+      "embed[type=svg] -> file:svg": "<svg> within <embed>",
+      "embed[type=svg] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <embed>",
+      "embed[type=svg] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <embed>",
+      "embed[type=svg] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <embed>",
+      "embed[type=svg] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <embed>",
+      "embed[type=svg][tabindex=0] -> file:svg": "<svg> within <embed tabindex=\"0\">",
+      "embed[type=svg][tabindex=0] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <embed tabindex=\"0\">",
+      "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <embed tabindex=\"0\">",
+      "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <embed tabindex=\"0\">",
+      "embed[type=svg][tabindex=0] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <embed tabindex=\"0\">",
+      "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <embed tabindex=\"-1\">",
+      "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <embed tabindex=\"-1\">",
+      "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <embed tabindex=\"-1\">",
+      "embed[type=svg][tabindex=-1] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <embed tabindex=\"-1\">"
+    }
+  },
+
+  {
+    "label": "SVG Document in Object Element",
+    "idents": {
+      "object[src=svg] -> file:svg": "<svg> within <object>",
+      "object[src=svg] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <object>",
+      "object[src=svg] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <object>",
+      "object[src=svg] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <object>",
+      "object[src=svg] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <object>",
+      "object[src=svg][tabindex=0] -> file:svg": "<svg> within <object tabindex=\"0\">",
+      "object[src=svg][tabindex=0] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <object tabindex=\"0\">",
+      "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <object tabindex=\"0\">",
+      "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <object tabindex=\"0\">",
+      "object[src=svg][tabindex=0] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <object tabindex=\"0\">",
+      "object[src=svg][tabindex=-1] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <object tabindex=\"-1\">",
+      "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <object tabindex=\"-1\">",
+      "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <object tabindex=\"-1\">",
+      "object[src=svg][tabindex=-1] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <object tabindex=\"-1\">",
+      "object[src=svg][height=0] -> file:svg": "<svg> within <object height=\"0\">",
+      "object[src=svg][height=0] -> file:svg a[xlink|href]": "<a xlink:href=\"…\"> within <object height=\"0\">",
+      "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=1]": "<a xlink:href=\"…\" tabindex=\"1\"> within <object height=\"0\">",
+      "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=-1]": "<a xlink:href=\"…\" tabindex=\"-1\"> within <object height=\"0\">",
+      "object[src=svg][height=0] -> file:svg a[focusable=false]": "<a xlink:href=\"…\" focusable=\"false\"> within <object height=\"0\">"
     }
   },
 
@@ -354,14 +488,14 @@
     "label": "Details Element",
     "idents": {
       "details[tabindex=-1]": "<details tabindex=\"-1\">",
-
+      "details a[href]": "<a href=\"…\"> within <details>",
+      "details summary[tabindex=-1]": "<summary tabindex=\"-1\"> within <details>",
+      "details[tabindex=-1] a[href]": "<a href=\"…\"> within <details tabindex=\"-1\">",
+      "details:has(summary[tabindex=-1]) a[href]": "<a href=\"…\"> within <details> that has <summary tabindex=\"-1\">",
       "details summary": "<summary> within <details>",
       "details[tabindex=-1] summary": "<summary> within <details tabindex=\"-1\">",
-      "details summary[tabindex=-1]": "<summary tabindex=\"-1\"> within <details>",
-      "details[open] summary": "<summary> within <details open>",
-
-      "details a[href]": "<a href=\"…\"> within <details>",
-      "details[open] a[href]": "<a href=\"…\"> within <details open>"
+      "details[open] a[href]": "<a href=\"…\"> within <details open>",
+      "details[open] summary": "<summary> within <details open>"
     }
   },
 
@@ -452,11 +586,24 @@
       "a{flexbox} > span": "<span> child of <a href=\"…\" style=\"display: flex\">",
       "[tabindex=\"-1\"]{flexbox}": "<div tabindex=\"-1\" style=\"display: flex\">",
       "[tabindex=\"-1\"]{flexbox} > span1": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
-      "[tabindex=\"-1\"]{flexbox} > span2": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">"
+      "[tabindex=\"-1\"]{flexbox} > span2": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
+
+      "span{flexbox}": "<span style=\"display: flex\"> with inert children",
+      "div{flexbox}": "<div style=\"display: flex\"> with focusable descendants",
+      "div{flexbox} span{order:1}": "<span style=\"order: 1\"> with focusable child",
+      "div{flexbox} span{order:2}": "<span style=\"order: 2\"> with focusable child",
+      "div{flexbox} span{order:1} input": "<input type=\"text\"> within a <span> within <div style=\"display: flex\">",
+      "div{flexbox} span{order:2} input": "<input type=\"text\"> within a <span> within <div style=\"display: flex\">"
     },
     "redundant": {
       "[tabindex=\"-1\"]{flexbox} > span1": [
         "[tabindex=\"-1\"]{flexbox} > span2"
+      ],
+      "div{flexbox} span{order:1}": [
+        "div{flexbox} span{order:2}"
+      ],
+      "div{flexbox} span{order:1} input": [
+        "div{flexbox} span{order:2} input"
       ]
     },
     "irrelevant": [

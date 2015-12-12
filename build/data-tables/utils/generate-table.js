@@ -73,11 +73,12 @@ module.exports = function({
       }
 
       data.notes = source.notes.getBrowser(ident, browser);
+      data.redirectTarget = source.notes.getTarget(ident, browser);
       data.isInert = !data.browser.focusable && !data.browser.tabbable;
       cells.push(_cellTemplate(data));
     });
 
-    const notes = source.notes.get(ident);
+    const notes = source.notes.getIdent(ident);
     rows.push(_rowTemplate({
       groupId: group.id,
       identId,
