@@ -185,7 +185,7 @@ class Notes {
   }
   getTarget(ident, browser) {
     const _map = this.index[ident];
-    return _map && _map.target[browser] || [];
+    return _map && _map.target[browser] || null;
   }
   getBrowser(ident, browser) {
     const _map = this.index[ident];

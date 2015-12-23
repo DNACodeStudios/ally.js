@@ -26,6 +26,7 @@ module.exports = function({
   browsers,
   skipIdents,
   skipExpected,
+  referencedNotes,
   cellTemplate,
   cellData,
   rowData,
@@ -76,9 +77,13 @@ module.exports = function({
       data.redirectTarget = source.notes.getTarget(ident, browser);
       data.isInert = !data.browser.focusable && !data.browser.tabbable;
       cells.push(_cellTemplate(data));
+
+      data.redirectTarget && referencedNotes.add(String(data.redirectTarget));
+      data.notes.forEach(key => referencedNotes.add(String(key)));
     });
 
     const notes = source.notes.getIdent(ident);
+    notes.forEach(key => referencedNotes.add(String(key)));
     rows.push(_rowTemplate({
       groupId: group.id,
       identId,
