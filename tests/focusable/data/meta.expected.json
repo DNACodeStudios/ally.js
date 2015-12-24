@@ -85,22 +85,22 @@
     "tabbable": true,
     "index": 2
   },
-  "[tabindex=\"\"]": {
+  "[tabindex=]": {
     "focusable": false,
     "tabbable": false,
     "index": -1
   },
-  "[tabindex=\"-1\"]{flexbox}": {
+  "[tabindex=-1]{flexbox}": {
     "focusable": true,
     "tabbable": false,
     "index": -1
   },
-  "[tabindex=\"-1\"]{flexbox} > span1": {
+  "[tabindex=-1]{flexbox} > span1": {
     "focusable": false,
     "tabbable": false,
     "index": -1
   },
-  "[tabindex=\"-1\"]{flexbox} > span2": {
+  "[tabindex=-1]{flexbox} > span2": {
     "focusable": false,
     "tabbable": false,
     "index": -1
@@ -165,7 +165,7 @@
     "tabbable": true,
     "index": 0
   },
-  "a[href=\"\"]": {
+  "a[href=]": {
     "focusable": true,
     "tabbable": true,
     "index": 0
@@ -846,7 +846,7 @@
     "tabbable": true,
     "index": 0
   },
-  "img[usemap=\"void\"]": {
+  "img[usemap=void]": {
     "focusable": false,
     "tabbable": false,
     "index": -1
@@ -1011,17 +1011,17 @@
     "tabbable": false,
     "index": -1
   },
-  "label[for=\"label-target\"]": {
+  "label[for=label-target]": {
     "focusable": false,
     "tabbable": false,
     "index": -1
   },
-  "label[for=\"label-target\"][tabindex=-1]": {
+  "label[for=label-target][tabindex=-1]": {
     "focusable": false,
     "tabbable": false,
     "index": -1
   },
-  "label[for=\"label-target-focusable\"]": {
+  "label[for=label-target-focusable]": {
     "focusable": false,
     "tabbable": false,
     "index": -1

@@ -77,9 +77,9 @@
     <label data-label="label">label</label>
     <label data-label="label[tabindex=-1]" tabindex="-1">label</label>
     <label data-label="label[tabindex=0]" tabindex="0">label</label>
-    <label for="label-target" data-label="label[for=&quot;label-target&quot;]">label</label>
-    <label for="label-target-focusable" data-label="label[for=&quot;label-target-focusable&quot;]">label</label>
-    <label for="label-target" data-label="label[for=&quot;label-target&quot;][tabindex=-1]" tabindex="-1">label</label>
+    <label for="label-target" data-label="label[for=label-target]">label</label>
+    <label for="label-target-focusable" data-label="label[for=label-target-focusable]">label</label>
+    <label for="label-target" data-label="label[for=label-target][tabindex=-1]" tabindex="-1">label</label>
   </article>
 
   <!-- http://www.w3.org/TR/html5/disabled-elements.html#concept-element-disabled -->
@@ -104,7 +104,7 @@
 
     <a name="void-navigation-elements-1" data-label="a[name]">link</a>
     <a href="#void" data-label="a[href]">link</a>
-    <a href="" data-label="a[href=&quot;&quot;]">link</a>
+    <a href="" data-label="a[href=]">link</a>
     <a href="#void" data-label="a[href][tabindex=-1]" tabindex="-1">link</a>
 
     <span href="#void" data-label="span[href]">span with href attribute (invalid html)</span>
@@ -139,7 +139,7 @@
 
     <input data-label="ignore">
 
-    <img usemap="#void" src="../media/image-map.png" alt="two clickable areas" data-label="img[usemap=&quot;void&quot;]">
+    <img usemap="#void" src="../media/image-map.png" alt="two clickable areas" data-label="img[usemap=void]">
     <img src="../media/image-map.png" alt="no map associated" data-label="img">
 
     <map name="image-maps-focusable-1">
@@ -628,7 +628,7 @@
 
     <h3 id="invalid-tabindex">Invalid Tabindex</h3>
     <input tabindex="hello" data-label="input[tabindex=hello]">
-    <div tabindex="" data-label="[tabindex=&quot;&quot;]">empty tabindex</div>
+    <div tabindex="" data-label="[tabindex=]">empty tabindex</div>
     <div tabindex="hello" data-label="[tabindex=hello]">tabindex <code>hello</code></div>
     <div tabindex="3 " data-label="[tabindex=3 ]">tabindex <code>3 </code></div>
     <div tabindex="3x" data-label="[tabindex=3x]">tabindex <code>3x</code></div>
@@ -750,9 +750,9 @@
       <span data-label="a{flexbox} > span">link</span>
     </a>
 
-    <div tabindex="-1" data-label="[tabindex=&quot;-1&quot;]{flexbox}" class="flexbox">
-      <span data-label="[tabindex=&quot;-1&quot;]{flexbox} > span1">hello</span>
-      <span data-label="[tabindex=&quot;-1&quot;]{flexbox} > span2">world</span>
+    <div tabindex="-1" data-label="[tabindex=-1]{flexbox}" class="flexbox">
+      <span data-label="[tabindex=-1]{flexbox} > span1">hello</span>
+      <span data-label="[tabindex=-1]{flexbox} > span2">world</span>
     </div>
 
     <div data-label="div{flexbox}" class="flexbox">

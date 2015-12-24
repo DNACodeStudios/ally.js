@@ -24,7 +24,7 @@
     }
   },
 
-  "label[for=\"label-target\"][tabindex=-1]": {
+  "label[for=label-target][tabindex=-1]": {
     "alias": [
       "label[tabindex=-1]",
       "label[tabindex=0]"
@@ -40,7 +40,7 @@
   "[tabindex=3x]": "The value's trailing non-numeric characters are considered invalid according to [rules for parsing integers](http://www.w3.org/TR/html5/infrastructure.html#rules-for-parsing-integers) required by [HTML5 tabindex](http://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tabindex-attribute)",
   "[tabindex=hello]": "@invalid-tabindex-value",
   "input[tabindex=hello]": "@invalid-tabindex-value",
-  "[tabindex=\"\"]": {
+  "[tabindex=]": {
     "general": "@invalid-tabindex-value",
     "browsers": {
       "ie-10": "@empty-tabindex-ie11",
@@ -394,8 +394,8 @@
   "@flexbox-ie-bug": "There is no indication that the focusability of an element can be inherited by its children, let alone triggered by flexbox layout.",
   "a{flexbox} > span": {
     "alias": [
-      "[tabindex=\"-1\"]{flexbox} > span1",
-      "[tabindex=\"-1\"]{flexbox} > span2",
+      "[tabindex=-1]{flexbox} > span1",
+      "[tabindex=-1]{flexbox} > span2",
       "span{flexbox}",
       "div{flexbox}",
       "div{flexbox} span{order:1}",
@@ -436,9 +436,9 @@
   "@redirect-image-area": "Focus is redirected to the the first `<area>` element of the referenced image map.",
   "-redirections": {
     "redirect": {
-      "label[for=\"label-target\"] --- input[type=text]": "@redirect-referenced-input",
-      "label[for=\"label-target-focusable\"] --- input[type=text][tabindex=-1]": "@redirect-referenced-input",
-      "label[for=\"label-target\"][tabindex=-1] --- input[type=text]": "@redirect-referenced-input",
+      "label[for=label-target] --- input[type=text]": "@redirect-referenced-input",
+      "label[for=label-target-focusable] --- input[type=text][tabindex=-1]": "@redirect-referenced-input",
+      "label[for=label-target][tabindex=-1] --- input[type=text]": "@redirect-referenced-input",
       "fieldset legend --- fieldset input": "@redirect-legend-input",
       "img[usemap].first --- area[href].upper": "@redirect-image-area",
       "img[usemap].second --- area[href].upper": "@redirect-image-area",

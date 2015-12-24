@@ -58,15 +58,15 @@
   {
     "label": "Label Element",
     "idents": {
-      "label[for=\"label-target\"]": "<label for=\"…\"> with <input id=\"…\">",
-      "label[for=\"label-target-focusable\"]": "<label for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
-      "label[for=\"label-target\"][tabindex=-1]": "<label tabindex=\"-1\" for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
+      "label[for=label-target]": "<label for=\"…\"> with <input id=\"…\">",
+      "label[for=label-target-focusable]": "<label for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
+      "label[for=label-target][tabindex=-1]": "<label tabindex=\"-1\" for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
       "label[tabindex=-1]": "<label tabindex=\"-1\">",
       "label[tabindex=0]": "<label tabindex=\"0\">"
     },
     "redundant": {
-      "label[for=\"label-target\"]": [
-        "label[for=\"label-target-focusable\"]"
+      "label[for=label-target]": [
+        "label[for=label-target-focusable]"
       ]
     }
   },
@@ -98,7 +98,7 @@
       "[tabindex= +2]": "<div tabindex=\" +2\">",
       "[tabindex=3 ]": "<div tabindex=\"3 \">",
       "[tabindex=3x]": "<div tabindex=\"3x\">",
-      "[tabindex=\"\"]": "<div tabindex=\"\">",
+      "[tabindex=]": "<div tabindex=\"\">",
       "[tabindex=hello]": "<div tabindex=\"hello\">",
       "input[tabindex=hello]": "<input tabindex=\"hello\">",
       "div[tabindex=-1]:empty": "<div tabindex=\"-1\"> without content",
@@ -125,7 +125,7 @@
     "idents": {
       "link[itemprop][href]": "<link itemprop=\"url\" href=\"…\">",
 
-      "a[href=\"\"]": "<a href=\"\">",
+      "a[href=]": "<a href=\"\">",
       "a[href]": "<a href=\"…\">",
       "a[href][tabindex=-1]": "<a href=\"…\" tabindex=\"-1\">"
     }
@@ -584,9 +584,9 @@
     "idents": {
       "a{flexbox}": "<a href=\"…\" style=\"display: flex\">",
       "a{flexbox} > span": "<span> child of <a href=\"…\" style=\"display: flex\">",
-      "[tabindex=\"-1\"]{flexbox}": "<div tabindex=\"-1\" style=\"display: flex\">",
-      "[tabindex=\"-1\"]{flexbox} > span1": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
-      "[tabindex=\"-1\"]{flexbox} > span2": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
+      "[tabindex=-1]{flexbox}": "<div tabindex=\"-1\" style=\"display: flex\">",
+      "[tabindex=-1]{flexbox} > span1": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
+      "[tabindex=-1]{flexbox} > span2": "<span> child of <div tabindex=\"-1\" style=\"display: flex\">",
 
       "span{flexbox}": "<span style=\"display: flex\"> with inert children",
       "div{flexbox}": "<div style=\"display: flex\"> with focusable descendants",
@@ -596,8 +596,8 @@
       "div{flexbox} span{order:2} input": "<input type=\"text\"> within a <span> within <div style=\"display: flex\">"
     },
     "redundant": {
-      "[tabindex=\"-1\"]{flexbox} > span1": [
-        "[tabindex=\"-1\"]{flexbox} > span2"
+      "[tabindex=-1]{flexbox} > span1": [
+        "[tabindex=-1]{flexbox} > span2"
       ],
       "div{flexbox} span{order:1}": [
         "div{flexbox} span{order:2}"
@@ -608,7 +608,7 @@
     },
     "irrelevant": [
       "a{flexbox}",
-      "[tabindex=\"-1\"]{flexbox}"
+      "[tabindex=-1]{flexbox}"
     ]
   },
 
