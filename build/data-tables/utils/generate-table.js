@@ -97,7 +97,7 @@ module.exports = function({
       labelHtml: highlightLabel(idents[ident], ident),
       duplicates: group.duplicate[ident] || '',
       notes: notes,
-      rowData: rowData && rowData(ident, sourceIdent) || {},
+      rowData: rowData && rowData(ident, sourceIdent, referencedNotes) || {},
       cells: cells.join('\n'),
     }));
   });
