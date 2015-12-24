@@ -768,12 +768,12 @@
   "iframe[src=svg][tabindex=-1] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": 0
   },
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": 0
   },
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
@@ -783,7 +783,7 @@
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": 1
   },
   "iframe[tabindex=-1]": {
     "focusable": true,
@@ -1143,7 +1143,7 @@
   "object[src=svg][tabindex=-1] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": 0
   },
   "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
