@@ -60,7 +60,7 @@
     "idents": {
       "label[for=label-target]": "<label for=\"…\"> with <input id=\"…\">",
       "label[for=label-target-focusable]": "<label for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
-      "label[for=label-target][tabindex=-1]": "<label tabindex=\"-1\" for=\"…\"> with <input id=\"…\" tabindex=\"-1\">",
+      "label[for=label-target][tabindex=-1]": "<label tabindex=\"-1\" for=\"…\"> with <input id=\"…\">",
       "label[tabindex=-1]": "<label tabindex=\"-1\">",
       "label[tabindex=0]": "<label tabindex=\"0\">"
     },

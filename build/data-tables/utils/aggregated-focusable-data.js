@@ -21,8 +21,13 @@ function convertExpectedStructure(content) {
       data.tabOrder.push(ident);
     }
 
-    // is.redirect
-    // is.encapsulated
+    if (is.redirect) {
+      data.focusRedirection.push(ident + ' --- ' + is.redirect);
+    }
+
+    if (is.encapsulated) {
+      data.focusEncapsulation.push(ident + ' --- ' + is.encapsulated);
+    }
 
     data.tabIndex[ident] = is.index;
   });

@@ -18,6 +18,7 @@
     "focusable": [],
     "focusEvents": [],
     "focusRedirection": [],
+    "focusEncapsulation": [],
     "noFocusMethod": [],
     "tabOrder": [],
     "tabIndex": {},
@@ -854,7 +855,8 @@
   "img[usemap].first": {
     "focusable": false,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "redirect": "area[href].upper"
   },
   "img[usemap].focusable": {
     "focusable": false,
@@ -1014,17 +1016,20 @@
   "label[for=label-target]": {
     "focusable": false,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "redirect": "input[type=text]"
   },
   "label[for=label-target][tabindex=-1]": {
     "focusable": false,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "redirect": "input[type=text]"
   },
   "label[for=label-target-focusable]": {
     "focusable": false,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "redirect": "input[type=text][tabindex=-1]"
   },
   "label[tabindex=-1]": {
     "focusable": false,
