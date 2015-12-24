@@ -522,6 +522,7 @@
   "@encapsulated-embed": "Browser plugins running the `<embed>` can manage their own focus. Any time the `<embed>` or its content has focus, the master document's `activeElement` points to the `<embed>`.\n\nNote that the content of `<embed>` elements is not accessible to scripting from the outside, but from within the `<embed>`'s document JavaScript can interact with [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent).",
   "-encapsulated-embed": {
     "redirect": {
+      "embed[type=svg] -> file:svg --- embed[type=svg]": "@encapsulated-embed",
       "embed[type=svg] -> file:svg a[xlink|href] --- embed[type=svg]": "@encapsulated-embed",
       "embed[type=svg] -> file:svg a[xlink|href][tabindex=1] --- embed[type=svg]": "@encapsulated-embed",
       "embed[type=svg] -> file:svg a[xlink|href][tabindex=-1] --- embed[type=svg]": "@encapsulated-embed",
@@ -530,6 +531,7 @@
       "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1] --- embed[type=svg][tabindex=-1]": "@encapsulated-embed",
       "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1] --- embed[type=svg][tabindex=-1]": "@encapsulated-embed",
       "embed[type=svg][tabindex=-1] -> file:svg a[focusable=false] --- embed[type=svg][tabindex=-1]": "@encapsulated-embed",
+      "embed[type=svg][tabindex=0] -> file:svg --- embed[type=svg][tabindex=0]": "@encapsulated-embed",
       "embed[type=svg][tabindex=0] -> file:svg a[xlink|href] --- embed[type=svg][tabindex=0]": "@encapsulated-embed",
       "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1] --- embed[type=svg][tabindex=0]": "@encapsulated-embed",
       "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1] --- embed[type=svg][tabindex=0]": "@encapsulated-embed",
@@ -543,6 +545,7 @@
   "@encapsulated-object": "The `<object>`'s document manages its own focus. Any time the `<object>` or its content has focus, the master document's `activeElement` points to the `<object>`.\n\nNote that `<object>`s are only [accessible to script](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement) via `element.contentWindow` when they share [the same origin](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).",
   "-encapsulated-object": {
     "redirect": {
+      "object[src=svg] -> file:svg --- object[src=svg]": "@encapsulated-object",
       "object[src=svg] -> file:svg a[xlink|href] --- object[src=svg]": "@encapsulated-object",
       "object[src=svg] -> file:svg a[xlink|href][tabindex=1] --- object[src=svg]": "@encapsulated-object",
       "object[src=svg] -> file:svg a[xlink|href][tabindex=-1] --- object[src=svg]": "@encapsulated-object",
@@ -551,10 +554,12 @@
       "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1] --- object[src=svg][tabindex=-1]": "@encapsulated-object",
       "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1] --- object[src=svg][tabindex=-1]": "@encapsulated-object",
       "object[src=svg][tabindex=-1] -> file:svg a[focusable=false] --- object[src=svg][tabindex=-1]": "@encapsulated-object",
+      "object[src=svg][tabindex=0] -> file:svg --- object[src=svg][tabindex=0]": "@encapsulated-object",
       "object[src=svg][tabindex=0] -> file:svg a[xlink|href] --- object[src=svg][tabindex=0]": "@encapsulated-object",
       "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1] --- object[src=svg][tabindex=0]": "@encapsulated-object",
       "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1] --- object[src=svg][tabindex=0]": "@encapsulated-object",
       "object[src=svg][tabindex=0] -> file:svg a[focusable=false] --- object[src=svg][tabindex=0]": "@encapsulated-object",
+      "object[src=svg][height=0] -> file:svg --- object[src=svg][height=0]": "@encapsulated-object",
       "object[src=svg][height=0] -> file:svg a[xlink|href] --- object[src=svg][height=0]": "@encapsulated-object",
       "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=1] --- object[src=svg][height=0]": "@encapsulated-object",
       "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=-1] --- object[src=svg][height=0]": "@encapsulated-object",

@@ -599,22 +599,26 @@
   "embed[type=svg] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg]"
   },
   "embed[type=svg] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg]"
   },
   "embed[type=svg] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "embed[type=svg]"
   },
   "embed[type=svg] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "embed[type=svg]"
   },
   "embed[type=svg][tabindex=-1]": {
     "focusable": true,
@@ -624,22 +628,26 @@
   "embed[type=svg][tabindex=-1] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg][tabindex=-1]"
   },
   "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg][tabindex=-1]"
   },
   "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "embed[type=svg][tabindex=-1]"
   },
   "embed[type=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": false,
-    "index": 1
+    "index": 1,
+    "encapsulated": "embed[type=svg][tabindex=-1]"
   },
   "embed[type=svg][tabindex=0]": {
     "focusable": true,
@@ -654,22 +662,26 @@
   "embed[type=svg][tabindex=0] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg][tabindex=0]"
   },
   "embed[type=svg][tabindex=0] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "embed[type=svg][tabindex=0]"
   },
   "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "embed[type=svg][tabindex=0]"
   },
   "embed[type=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "embed[type=svg][tabindex=0]"
   },
   "fieldset": {
     "focusable": false,
@@ -745,22 +757,26 @@
   "iframe[src=svg] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe[src=svg]"
   },
   "iframe[src=svg] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe[src=svg]"
   },
   "iframe[src=svg] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "iframe[src=svg]"
   },
   "iframe[src=svg] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "iframe[src=svg]"
   },
   "iframe[src=svg][tabindex=-1]": {
     "focusable": true,
@@ -770,25 +786,34 @@
   "iframe[src=svg][tabindex=-1] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe[src=svg][tabindex=-1]"
   },
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe[src=svg][tabindex=-1]"
   },
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "iframe[src=svg][tabindex=-1]"
   },
   "iframe[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": false,
-    "index": 1
+    "index": 1,
+    "encapsulated": "iframe[src=svg][tabindex=-1]"
   },
   "iframe[tabindex=-1]": {
     "focusable": true,
+    "tabbable": false,
+    "index": -1
+  },
+  "iframe[tabindex=-1] -> body": {
+    "focusable": false,
     "tabbable": false,
     "index": -1
   },
@@ -805,27 +830,37 @@
   "iframe{focusable} -> input": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe{focusable}"
   },
   "iframe{focusable} -> input[tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "iframe{focusable}"
   },
   "iframe{focusable}[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
     "index": -1
   },
+  "iframe{focusable}[tabindex=-1] -> body": {
+    "focusable": false,
+    "tabbable": false,
+    "index": -1,
+    "encapsulated": "iframe{focusable}[tabindex=-1]"
+  },
   "iframe{focusable}[tabindex=-1] -> input": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "iframe{focusable}[tabindex=-1]"
   },
   "iframe{focusable}[tabindex=-1] -> input[tabindex=1]": {
     "focusable": true,
     "tabbable": false,
-    "index": 1
+    "index": 1,
+    "encapsulated": "iframe{focusable}[tabindex=-1]"
   },
   "img": {
     "focusable": false,
@@ -855,8 +890,7 @@
   "img[usemap].first": {
     "focusable": false,
     "tabbable": false,
-    "index": -1,
-    "redirect": "area[href].upper"
+    "index": -1
   },
   "img[usemap].focusable": {
     "focusable": false,
@@ -1089,22 +1123,26 @@
   "object[src=svg] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg]"
   },
   "object[src=svg] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg]"
   },
   "object[src=svg] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "object[src=svg]"
   },
   "object[src=svg] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "object[src=svg]"
   },
   "object[src=svg][height=0]": {
     "focusable": true,
@@ -1119,22 +1157,26 @@
   "object[src=svg][height=0] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg][height=0]"
   },
   "object[src=svg][height=0] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg][height=0]"
   },
   "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "object[src=svg][height=0]"
   },
   "object[src=svg][height=0] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "object[src=svg][height=0]"
   },
   "object[src=svg][tabindex=-1]": {
     "focusable": true,
@@ -1144,27 +1186,36 @@
   "object[src=svg][tabindex=-1] -> file:svg a[focusable=false]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "object[src=svg][tabindex=-1]"
   },
   "object[src=svg][tabindex=-1] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg][tabindex=-1]"
   },
   "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "object[src=svg][tabindex=-1]"
   },
   "object[src=svg][tabindex=-1] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": false,
-    "index": 1
+    "index": 1,
+    "encapsulated": "object[src=svg][tabindex=-1]"
   },
   "object[src=svg][tabindex=0]": {
     "focusable": true,
     "tabbable": true,
     "index": 0
+  },
+  "object[src=svg][tabindex=0] -> file:svg": {
+    "focusable": false,
+    "tabbable": false,
+    "index": -1
   },
   "object[src=svg][tabindex=0] -> file:svg a[focusable=false]": {
     "focusable": true,
@@ -1174,17 +1225,20 @@
   "object[src=svg][tabindex=0] -> file:svg a[xlink|href]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "object[src=svg][tabindex=0]"
   },
   "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "object[src=svg][tabindex=0]"
   },
   "object[src=svg][tabindex=0] -> file:svg a[xlink|href][tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "object[src=svg][tabindex=0]"
   },
   "object[src=swf]": {
     "focusable": true,
@@ -1249,32 +1303,38 @@
   "shadow-host inner-host input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host"
   },
   "shadow-host inner-host input[tabindex=0]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host"
   },
   "shadow-host inner-host input[tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "shadow-host"
   },
   "shadow-host input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host"
   },
   "shadow-host input[tabindex=0]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host"
   },
   "shadow-host input[tabindex=2]": {
     "focusable": true,
     "tabbable": true,
-    "index": 2
+    "index": 2,
+    "encapsulated": "shadow-host"
   },
   "shadow-host[tabindex=-1]": {
     "focusable": true,
@@ -1289,32 +1349,38 @@
   "shadow-host[tabindex=-1] inner-host input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=-1] inner-host input[tabindex=0]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=-1] inner-host input[tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=-1] input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=-1] input[tabindex=0]": {
     "focusable": true,
     "tabbable": false,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=-1] input[tabindex=2]": {
     "focusable": true,
     "tabbable": false,
-    "index": 2
+    "index": 2,
+    "encapsulated": "shadow-host[tabindex=-1]"
   },
   "shadow-host[tabindex=0]": {
     "focusable": true,
@@ -1329,32 +1395,38 @@
   "shadow-host[tabindex=0] inner-host input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "shadow-host[tabindex=0] inner-host input[tabindex=0]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "shadow-host[tabindex=0] inner-host input[tabindex=1]": {
     "focusable": true,
     "tabbable": true,
-    "index": 1
+    "index": 1,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "shadow-host[tabindex=0] input[tabindex=-1]": {
     "focusable": true,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "shadow-host[tabindex=0] input[tabindex=0]": {
     "focusable": true,
     "tabbable": true,
-    "index": 0
+    "index": 0,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "shadow-host[tabindex=0] input[tabindex=2]": {
     "focusable": true,
     "tabbable": true,
-    "index": 2
+    "index": 2,
+    "encapsulated": "shadow-host[tabindex=0]"
   },
   "span[href]": {
     "focusable": false,
@@ -1438,8 +1510,8 @@
   },
   "svg a[xlink|href][tabindex=1]": {
     "focusable": true,
-    "tabbable": false,
-    "index": -1
+    "tabbable": true,
+    "index": 1
   },
   "svg a[xlink|href][tabindex=1] text": {
     "focusable": false,
