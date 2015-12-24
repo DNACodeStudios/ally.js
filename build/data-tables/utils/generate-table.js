@@ -57,8 +57,13 @@ module.exports = function({
       expected.identId = identId;
       expected.ident = ident;
 
+      expected.notes = source.notes.getBrowser(ident, 'expected');
+      expected.redirectTarget = source.notes.getTarget(ident, 'expected');
       expected.isInert = !expected.browser.focusable && !expected.browser.tabbable;
       cells.push(_cellTemplate(expected));
+
+      expected.redirectTarget && referencedNotes.add(String(expected.redirectTarget));
+      expected.notes.forEach(key => referencedNotes.add(String(key)));
     }
 
     columns.forEach(function(browser) {
