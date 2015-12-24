@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/element/_element.js"],"names":[],"mappings":";;;;;;;;;;;wBAGqB,YAAY;;;;qBAClB;AACb,UAAQ,uBAAA;CACT","file":"_element.js","sourcesContent":["\n// exporting modules to be included the UMD bundle\n\nimport disabled from './disabled';\nexport default {\n  disabled,\n};\n"]}

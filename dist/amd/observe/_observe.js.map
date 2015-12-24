@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/observe/_observe.js"],"names":[],"mappings":";;;;;;;;;mBAIe;AACb,mBAAe,8BAAA;GAChB","file":"_observe.js","sourcesContent":["\n// exporting modules to be included the UMD bundle\n\nimport interactionType from './interaction-type';\nexport default {\n  interactionType,\n};\n"]}
