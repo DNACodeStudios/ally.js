@@ -76,6 +76,37 @@
   "audio": "`<audio>` is considered [interactive content](http://www.w3.org/TR/html5/dom.html#interactive-content) only with the <code>controls</code> attribute present",
   "video": "`<video>` is considered [interactive content](http://www.w3.org/TR/html5/dom.html#interactive-content) only with the <code>controls</code> attribute present",
 
+  "@shadow-dom-support": "[Shadow DOM](http://w3c.github.io/webcomponents/spec/shadow/) is currently only \"properly\" supported in Blink based browsers (Chrome, Opera). Firefox exposes the (considerably buggy) development state behind flags.\n\nSee [Can I Use](http://caniuse.com/#feat=shadowdom).",
+  "-shadow-dom-support": {
+    "alias": [
+      "shadow-host",
+      "shadow-host inner-host",
+      "shadow-host[tabindex=-1]",
+      "shadow-host[tabindex=-1] inner-host",
+      "shadow-host[tabindex=0]",
+      "shadow-host[tabindex=0] inner-host",
+      "shadow-host input[tabindex=-1]",
+      "shadow-host input[tabindex=0]",
+      "shadow-host input[tabindex=2]",
+      "shadow-host inner-host input[tabindex=-1]",
+      "shadow-host inner-host input[tabindex=0]",
+      "shadow-host inner-host input[tabindex=1]",
+      "shadow-host[tabindex=-1] input[tabindex=-1]",
+      "shadow-host[tabindex=-1] input[tabindex=0]",
+      "shadow-host[tabindex=-1] input[tabindex=2]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=-1]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=0]",
+      "shadow-host[tabindex=-1] inner-host input[tabindex=1]",
+      "shadow-host[tabindex=0] input[tabindex=-1]",
+      "shadow-host[tabindex=0] input[tabindex=0]",
+      "shadow-host[tabindex=0] input[tabindex=2]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=-1]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=0]",
+      "shadow-host[tabindex=0] inner-host input[tabindex=1]"
+    ],
+    "general": "@shadow-dom-support"
+  },
+
   "@shadow-host-target": "Regardless of its own focusable state, an element hosting a Shadow DOM can become the `activeElement` if an element inside the `ShadowRoot` has focus. See [Shadow DOM - Active Element](http://w3c.github.io/webcomponents/spec/shadow/#active-element)",
   "-shadow-host-target": {
     "alias": [
