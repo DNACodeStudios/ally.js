@@ -683,7 +683,8 @@
   "fieldset legend": {
     "focusable": false,
     "tabbable": false,
-    "index": -1
+    "index": -1,
+    "redirect": "fieldset input"
   },
   "fieldset:empty": {
     "focusable": false,

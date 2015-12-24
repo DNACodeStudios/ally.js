@@ -21,6 +21,9 @@ function convertExpectedStructure(content) {
       data.tabOrder.push(ident);
     }
 
+    // is.redirect
+    // is.encapsulated
+
     data.tabIndex[ident] = is.index;
   });
 
